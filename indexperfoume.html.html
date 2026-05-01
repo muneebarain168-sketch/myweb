@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muneeb Premium Store | Shahdadpur</title>
+    <!-- Google Fonts for Luxury Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #0F0F0F;
+            --dark-grey: #1A1A1A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        /* Navigation */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* Product Catalog Grid */
+        .catalog {
+            padding: 100px 8% 50px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--gold);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--dark-grey);
+            padding: 20px;
+            border: 1px solid #333;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .product-card .price {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* Detailed Individual Product Sections */
+        .product-detail-section {
+            min-height: 100vh;
+            padding: 120px 8%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            border-top: 1px solid #222;
+        }
+
+        .product-detail-section:nth-child(even) {
+            background-color: #050505;
+            flex-direction: row-reverse;
+        }
+
+        .detail-image {
+            flex: 1;
+        }
+
+        .detail-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .detail-info {
+            flex: 1;
+        }
+
+        .detail-info h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .detail-price {
+            font-size: 1.8rem;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .detail-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Buttons */
+        .actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-call {
+            background-color: var(--gold);
+            color: black;
+        }
+
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            padding: 50px 8%;
+            background: #000;
+            text-align: center;
+            border-top: 1px solid var(--gold);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .product-detail-section {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            .actions {
+                justify-content: center;
+            }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MUNEEB STORE</div>
+        <div style="font-size: 0.8rem; letter-spacing: 1px;">SHAHDADPUR | SINDH</div>
+    </header>
+
+    <section class="hero">
+        <h1>SIGNATURE COLLECTION</h1>
+        <p style="color: var(--gold); letter-spacing: 2px;">Premium Quality & Long Lasting Fragrances</p>
+    </section>
+
+    <!-- Main Catalog Grid -->
+    <section class="catalog">
+        <h2 class="section-title">Select Your Scent</h2>
+        <div class="grid">
+            <div class="product-card" onclick="location.href='#royal-musk'">
+                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=500" alt="Royal Musk">
+                <h3>Royal Musk</h3>
+                <p class="price">Rs. 4,500</p>
+                <p style="color: var(--gold); font-size: 0.9rem;">Premium Strong</p>
+            </div>
+            <div class="product-card" onclick="location.href='#urban-edge'">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=500" alt="Urban Edge">
+                <h3>Urban Edge</h3>
+                <p class="price">Rs. 3,800</p>
+                <p style="color: var(--gold); font-size: 0.9rem;">Modern Office Wear</p>
+            </div>
+            <div class="product-card" onclick="location.href='#oud-legend'">
+                <img src="image/WhatsApp Image 2026-05-01 at 10.28.42 AM (1).jpeg" alt="Oud Legend">
+                <h3>Oud Legend</h3>
+                <p class="price">Rs. 6,200</p>
+                <p style="color: var(--gold); font-size: 0.9rem;">Arabic Luxury</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Royal Musk Section -->
+    <section id="royal-musk" class="product-detail-section">
+        <div class="detail-image">
+            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=800" alt="Royal Musk">
+        </div>
+        <div class="detail-info">
+            <h2>Royal Musk</h2>
+            <span class="detail-price">Rs. 4,500</span>
+            <p>Premium, strong, and truly majestic. Royal Musk is designed for those who appreciate the finer things in life. A scent that commands attention and stays with you all day.</p>
+            <div class="actions">
+                <a href="tel:+923183974138" class="btn btn-call">Call Muneeb</a>
+                <a href="https://wa.me/923183974138?text=I%20want%20to%20order%20Royal%20Musk%20at%20Rs.4,500" class="btn btn-wa">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Urban Edge Section -->
+    <section id="urban-edge" class="product-detail-section">
+        <div class="detail-image">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800" alt="Urban Edge">
+        </div>
+        <div class="detail-info">
+            <h2>Urban Edge</h2>
+            <span class="detail-price">Rs. 3,800</span>
+            <p>The perfect fragrance for the modern professional. Urban Edge is clean, sharp, and sophisticated—making it the ideal choice for office wear and business meetings.</p>
+            <div class="actions">
+                <a href="tel:+923183974138" class="btn btn-call">Call Muneeb</a>
+                <a href="https://wa.me/923183974138?text=I%20want%20to%20order%20Urban%20Edge%20at%20Rs.3,800" class="btn btn-wa">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Oud Legend Section -->
+    <section id="oud-legend" class="product-detail-section">
+        <div class="detail-image">
+            <img src="image/WhatsApp Image 2026-05-01 at 10.28.42 AM (1).jpeg" alt="Oud Legend">
+        </div>
+        <div class="detail-info">
+            <h2>Oud Legend</h2>
+            <span class="detail-price">Rs. 6,200</span>
+            <p>Step into the world of Arabic luxury. Oud Legend brings a mysterious and deep woody aroma that echoes the traditions of the Orient. Truly a masterpiece for Oud lovers.</p>
+            <div class="actions">
+                <a href="tel:+923183974138" class="btn btn-call">Call Muneeb</a>
+                <a href="https://wa.me/923183974138?text=I%20want%20to%20order%20Oud%20Legend%20at%20Rs.6,200" class="btn btn-wa">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="font-family: 'Cinzel'; color: var(--gold); margin-bottom: 15px;">MUNEEB STORE</h2>
+        <p>Main Market, Shahdadpur, Sindh, Pakistan</p>
+        <p>Contact: +92 318 3974138</p>
+        <div style="margin-top: 20px; font-size: 0.8rem; color: #555;">&copy; 2026 Muneeb Fragrances. All Rights Reserved.</div>
+    </footer>
+
+</body>
+</html>
